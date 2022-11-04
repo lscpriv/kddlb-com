@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="style.scss")
+        title Contact me - Kevin López Brante
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    body
+        .container-fluid.py-3
+            h1 Contact me
+            form(name='contact' method='post' data-netlify='true' data-netlify-recaptcha='true')
+                .mb-3
+                    label(for='name').form-label Name
+                    input#name.form-control(type='text' name='name' placeholder='Enter your name' required='')
+                .mb-3
+                    label(for='email') Email
+                    input#email.form-control(type='email' name='email' placeholder='Enter your email' required='')
+                .mb-3
+                    label(for='message') Message
+                    textarea#message.form-control(name='message' rows='3' placeholder='Enter your message' required='' maxlength='1000')
+                .mb-3
+                    div(data-netlify-recaptcha='true')
+                    button.btn.btn-primary(type='submit') Submit
+        script(src="index.js",type="module") 
